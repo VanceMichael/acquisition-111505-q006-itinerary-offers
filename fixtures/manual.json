@@ -1,0 +1,11 @@
+{
+  "search": "manual-search",
+  "offer": "o1",
+  "segments": [
+    "a-b",
+    "b-c"
+  ],
+  "amount": "1250.00",
+  "currency": "CNY",
+  "taxIncluded": null
+}

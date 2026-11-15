@@ -1,0 +1,12 @@
+{
+  "name": "联程出行资料的航段组合与报价表示采集",
+  "probe": "/offers/search",
+  "identityFields": [
+    "search",
+    "offer"
+  ],
+  "probeBody": {
+    "from": "HAK",
+    "to": "SHA"
+  }
+}
