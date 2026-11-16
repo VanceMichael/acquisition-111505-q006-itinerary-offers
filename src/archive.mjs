@@ -22,6 +22,12 @@ export class Archive {
     try { await rename(temporary, path); }
     catch (error) { await unlink(temporary).catch(() => {}); throw error; }
   }
+  async storeBlob(raw) {
+    const bytes = Buffer.isBuffer(raw) ? raw : Buffer.from(raw);
+    const sha256 = digest(bytes);
+    await this.atomic(join(this.directory, 'blobs', sha256), bytes);
+    return { sha256, size: bytes.length };
+  }
   async accept(source, identity, data, raw) {
     const operation = async () => {
       const bytes = Buffer.isBuffer(raw) ? raw : Buffer.from(raw);
